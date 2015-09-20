@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="1.0">
+	
+	<xs:element name="Collection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="movies">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="movie" type="movieAttribute" minOccurs="1"
+								maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="movieAttribute">
+		<xs:sequence>
+			<xs:element name="originalTitle" type="xs:string"/>
+                        <xs:element name="genres" type="genresAttribute"/>
+<!-- 			<xs:element name="genre" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>    -->
+			<xs:element name="playtime" type="xs:integer"/> <!-- xs:long -->
+			<xs:element name="description" type="xs:string"/>
+                        <xs:element name="videoCodec" type="xs:string"/>
+                        <xs:element name="videoBitrate" type="xs:integer"/>
+			<xs:element name="audioCodec" type="xs:string"/>
+			<xs:element name="audioBitrate" type="xs:integer"/>
+			<xs:element name="audioChannels" type="xs:integer"/>
+                        <xs:element name="source" type="xs:integer"/>
+                        <xs:element name="imagePath" type="xs:string"/>
+                        <xs:element name="imageString" type="xs:string"/>
+                        <xs:element name="filePaths" type="filePathsAttribute"/>
+			<xs:element name="imdbRating" type="xs:double"/>
+                        <xs:element name="personalRating" type="xs:double"/>
+		</xs:sequence>
+		<xs:attribute name="title" type="xs:string"/>
+	</xs:complexType>
+
+        <xs:complexType name="genresAttribute">
+                <xs:sequence>
+                        <xs:element name="genre" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+
+         <xs:complexType name="filePathsAttribute">
+                <xs:sequence>
+                        <xs:element name="filePath" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+        </xs:complexType>
+	<!--
+	<xs:simpleType name="bookCategoryType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="magazine"/>
+			<xs:enumeration value="novel"/>
+			<xs:enumeration value="fiction"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+</xs:schema>
