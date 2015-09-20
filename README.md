@@ -22,6 +22,6 @@ project setup:
 * jMM is based on Java 1.7
 * entire project setup is currently based on Netbeans IDE (+ ANT scripts)
 * 3 sub-projects 
-** jMMCore - core functionality
-** jMMSwing - swing UI with a custom design
-** jMMUpdater - auto updater
+* + jMMCore - core functionality
+* + jMMSwing - swing UI with a custom design
+* + jMMUpdater - auto updater
